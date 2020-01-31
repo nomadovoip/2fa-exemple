@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  img(src="/images/nomado-logo.png")
+  h1 Nomado 2FA - Exemple
+  p Merci d'entrer votre numéro de téléphone (format e164) pour recevoir votre code de vérification
+  if error
+    p.red=error
+  form(method="post" action="/step2")
+      input(type="tel" name="number")
+      input(type="submit" value="Envoyer")

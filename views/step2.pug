@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  img(src="/images/nomado-logo.png")
+  h1 Etape 2
+  p Nous vous avons envoyé un sms contenant un code de vérification !
+  p Merci d'entrer ce code ci-dessous
+  if error
+      p.red=error
+  form(method="post" action="/step3")
+      input(type="text" name="code")
+      input(type="hidden" name="number" value=number)
+      input(type="submit" value="Vérifier")
